@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Rosette文本扩展介绍及安装</title>
+    <link href="/2020/06/04/rapidminer-textmining/"/>
+    <url>/2020/06/04/rapidminer-textmining/</url>
+    
+    <content type="html"><![CDATA[<div class="markdown-body">文本分析五部曲之1-Rosette文本扩展介绍及安装<a id="more"></a><h1 id="Rosette文本扩展介绍及安装"><a href="#Rosette文本扩展介绍及安装" class="headerlink" title="Rosette文本扩展介绍及安装"></a>Rosette文本扩展介绍及安装</h1><h2 id="引言-什么是Rosette"><a href="#引言-什么是Rosette" class="headerlink" title="引言:什么是Rosette?"></a>引言:什么是Rosette?</h2><p>Rosette，<strong>作为RapidMiner的文本挖掘扩展</strong>，是市场上最广泛使用的多语言信息提取解决方案。</p><p>Rosette®文本分析是一个强大的工具包，可用于处理<strong>多语言</strong>，<strong>文档</strong>和<strong>名称</strong>等。</p><p>在政府，金融，电子商务，搜索，社交媒体等领域的全球客户依赖Rosette文本分析来分析大量数据。百分之八十的大数据作为非结构化文本存在，非结构化文本也是多语言的，Rosette为企业提供巨大的价值，能够将<strong>非结构化文本转换为可行的见解</strong>，<strong>验证身份</strong>和<strong>防止灾难</strong>等。</p><p>整合了 Rosette TextToolkit 的 RapidMiner Studio，我们就可以处理任意的文本挖掘任务了！您也可以尝试不同的算子，包括<strong>提取文本，</strong>分类，情感分析，形态分析，分词，句标记，名称翻译和名称匹配等。</p><p><img src="%5Cimg%5C2020_06_04%5C1.jpg" srcset="/img/loading.gif" alt="1"></p><h2 id="First-下载扩展工具"><a href="#First-下载扩展工具" class="headerlink" title="First:下载扩展工具"></a>First:下载扩展工具</h2><p>打开RapidMiner Studio，导航到<strong>扩展(Extensions)</strong>菜单并在下拉菜单中选择<strong>应用市场（Marketplace）</strong>。</p><p>之后将打开一个新窗口，请在搜索栏目中搜索“rosette”，然后从结果列表中选择Rosette Text Toolkit。单击窗口底部的“<strong>Install 1 Packages</strong>”按钮，然后按照点击后说明完成安装。</p><p><img src="%5Cimg%5C2020_06_04%5C2.jpg" srcset="/img/loading.gif" alt="2"></p><p>一旦扩展完成安装，Rosette扩展将会在<strong>算子（Operators）</strong>操作面板的<strong>扩展文件夹</strong>中可见。</p><p><img src="%5Cimg%5C2020_06_04%5C3.jpg" srcset="/img/loading.gif" alt="3"></p><h2 id="Second-获取RosetteAPI密钥"><a href="#Second-获取RosetteAPI密钥" class="headerlink" title="Second:获取RosetteAPI密钥"></a>Second:获取RosetteAPI密钥</h2><p>为了激活用于RapidMiner Studio的Rosette文本工具包，您需要一个API密钥和一个Rosette开发人员帐户。进入如下网址<a href="https://developer.rosette.com/" target="_blank" rel="noopener"><strong>developer.rosette.com</strong></a>并完成注册。</p><p><img src="%5Cimg%5C2020_06_04%5C4.jpg" srcset="/img/loading.gif" alt="4"></p><p>您可以创建一个链接到您的电子邮件或GitHub帐户，不需要信用卡 – Rosette 默认提供<strong>每天10,000条免费调用</strong>！超过1万条需要付费。</p><p>PS:注册邮箱为企业邮箱，推荐学生邮箱。<a href="http://mail.student.cup.edu.cn/" target="_blank" rel="noopener">进入CUP学生邮箱</a></p><p><img src="%5Cimg%5C2020_06_04%5C5.jpg" srcset="/img/loading.gif" alt="5"></p><p>完成注册并验证您的帐户后，点击菜单栏左上角的<strong>API密钥</strong>标签以显示您的密钥。</p><p><img src="%5Cimg%5C2020_06_04%5C6.jpg" srcset="/img/loading.gif" alt="6"></p><h2 id="Third-设置RosetteAPI连接"><a href="#Third-设置RosetteAPI连接" class="headerlink" title="Third:设置RosetteAPI连接"></a>Third:设置RosetteAPI连接</h2><p>返回RapidMiner Studio，输入您的Rosette API密钥后就可以开始使用所有的Rosette算子。下一部分将会讲解，如何实体操作中查看提取算子，并使用它来设置Rosette API连接。</p><p>首先，在<strong>算子“Operators”</strong>面板的Rosette Text Toolkit文件夹中找到<strong>文本提取“Extract Entities”</strong>，并将其拖动到<strong>流程“Process”</strong>面板。</p><p><img src="%5Cimg%5C2020_06_04%5C7.jpg" srcset="/img/loading.gif" alt="7"></p><p>您可以在<strong>流程“Process”</strong>面板右侧的<strong>参数“Parameters”</strong>面板中查看文本提取“Extract Entities”算子的各种参数设置选项。第一个参数是<strong>连接“Connection”</strong>。 单击框右侧的Rosette图标。</p><p><img src="%5Cimg%5C2020_06_04%5C8.jpg" srcset="/img/loading.gif" alt="8"></p><p> 打开<strong>管理连接“Manage Connections”</strong>窗口。 单击左下角的<strong>添加连接“AddConnection”</strong>按钮，然后从 <strong>连接类型“Connection type”</strong> 下拉列表中选择<strong>”Rosette Connection”</strong>。 为新连接命名，然后单击<strong>创建“Create”</strong>按钮。</p><p><img src="%5Cimg%5C2020_06_04%5C9.jpg" srcset="/img/loading.gif" alt="9"></p><p>从左侧列表中选择新的“Rosette API”连接，然后在API KEY框中输入Rosette API密钥。 使用窗口底部的<strong>测试“Test”</strong>按钮来验证连接是否正常工作。 如果遇到问题，请确认API密钥是否正确。当确信一切运行顺利时，单击<strong>保存所有更改按钮“Save all changes”</strong>以返回到<strong>参数“Parameters”</strong>面板。</p><p><img src="%5Cimg%5C2020_06_04%5C10.jpg" srcset="/img/loading.gif" alt="10"></p><p>从连接<strong>Connection</strong>下拉列表中选择您的新连接。</p><p><img src="%5Cimg%5C2020_06_04%5C11.jpg" srcset="/img/loading.gif" alt="11"></p><p>现在您已设置好Rosette连接了。下一篇将详细介绍<code>Rosette</code>提取文本</p></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>rapidminer插件</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>RAPIDMINER 教育版申请及下载</title>
     <link href="/2020/06/03/DownLoad-repidminer/"/>
     <url>/2020/06/03/DownLoad-repidminer/</url>
