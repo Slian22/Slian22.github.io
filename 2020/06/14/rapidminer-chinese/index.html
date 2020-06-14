@@ -17,7 +17,7 @@
   <meta name="description" content="Slian">
   <meta name="author" content="Slian">
   <meta name="keywords" content="">
-  <title>Rosette文本扩展介绍及安装 - Slian&#39;s DreamWorks</title>
+  <title>Rapidminer 中文分词&amp;&amp;去除停用词 - Slian&#39;s DreamWorks</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -132,8 +132,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-06-04 20:10">
-                    2020年6月4日 晚上
+                  <time datetime="2020-06-14 22:22">
+                    2020年6月14日 晚上
                   </time>
                 </div>
               
@@ -143,7 +143,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    876 字
+                    1.3k 字
                   </span>
                 
 
@@ -153,7 +153,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    9
+                    16
                      分钟
                   </span>
                 
@@ -183,39 +183,132 @@
             
             <article class="markdown-body">
               <div class="markdown-body">
-文本分析五部曲之1-Rosette文本扩展介绍及安装
+Rapidminer 利用python插件替代原有只支持英文的功能进行中文分词&&去除停用词
 <a id="more"></a>
 
-<h1 id="Rosette文本扩展介绍及安装"><a href="#Rosette文本扩展介绍及安装" class="headerlink" title="Rosette文本扩展介绍及安装"></a>Rosette文本扩展介绍及安装</h1><h2 id="引言-什么是Rosette"><a href="#引言-什么是Rosette" class="headerlink" title="引言:什么是Rosette?"></a>引言:什么是Rosette?</h2><p>Rosette，<strong>作为RapidMiner的文本挖掘扩展</strong>，是市场上最广泛使用的多语言信息提取解决方案。</p>
-<p>Rosette®文本分析是一个强大的工具包，可用于处理<strong>多语言</strong>，<strong>文档</strong>和<strong>名称</strong>等。</p>
-<p>在政府，金融，电子商务，搜索，社交媒体等领域的全球客户依赖Rosette文本分析来分析大量数据。百分之八十的大数据作为非结构化文本存在，非结构化文本也是多语言的，Rosette为企业提供巨大的价值，能够将<strong>非结构化文本转换为可行的见解</strong>，<strong>验证身份</strong>和<strong>防止灾难</strong>等。</p>
-<p>整合了 Rosette TextToolkit 的 RapidMiner Studio，我们就可以处理任意的文本挖掘任务了！您也可以尝试不同的算子，包括<strong>提取文本，</strong>分类，情感分析，形态分析，分词，句标记，名称翻译和名称匹配等。</p>
-<p><img src="/img/2020_06_04/1.jpg" srcset="/img/loading.gif" alt="1"></p>
-<h2 id="First-下载扩展工具"><a href="#First-下载扩展工具" class="headerlink" title="First:下载扩展工具"></a>First:下载扩展工具</h2><p>打开RapidMiner Studio，导航到<strong>扩展(Extensions)</strong>菜单并在下拉菜单中选择<strong>应用市场（Marketplace）</strong>。</p>
-<p>之后将打开一个新窗口，请在搜索栏目中搜索“rosette”，然后从结果列表中选择Rosette Text Toolkit。单击窗口底部的“<strong>Install 1 Packages</strong>”按钮，然后按照点击后说明完成安装。</p>
-<p><img src="/img/2020_06_04/2.jpg" srcset="/img/loading.gif" alt="2"></p>
-<p>一旦扩展完成安装，Rosette扩展将会在<strong>算子（Operators）</strong>操作面板的<strong>扩展文件夹</strong>中可见。</p>
-<p><img src="/img/2020_06_04/3.jpg" srcset="/img/loading.gif" alt="3"></p>
-<h2 id="Second-获取RosetteAPI密钥"><a href="#Second-获取RosetteAPI密钥" class="headerlink" title="Second:获取RosetteAPI密钥"></a>Second:获取RosetteAPI密钥</h2><p>为了激活用于RapidMiner Studio的Rosette文本工具包，您需要一个API密钥和一个Rosette开发人员帐户。进入如下网址<a href="https://developer.rosette.com/" target="_blank" rel="noopener"><strong>developer.rosette.com</strong></a>并完成注册。</p>
-<p><img src="/img/2020_06_04/4.jpg" srcset="/img/loading.gif" alt="4"></p>
-<p>您可以创建一个链接到您的电子邮件或GitHub帐户，不需要信用卡 – Rosette 默认提供<strong>每天10,000条免费调用</strong>！超过1万条需要付费。</p>
-<p>PS:注册邮箱为企业邮箱，推荐学生邮箱。<a href="http://mail.student.cup.edu.cn/" target="_blank" rel="noopener">进入CUP学生邮箱</a></p>
-<p><img src="/img/2020_06_04/5.jpg" srcset="/img/loading.gif" alt="5"></p>
-<p>完成注册并验证您的帐户后，点击菜单栏左上角的<strong>API密钥</strong>标签以显示您的密钥。</p>
-<p><img src="/img/2020_06_04/6.jpg" srcset="/img/loading.gif" alt="6"></p>
-<h2 id="Third-设置RosetteAPI连接"><a href="#Third-设置RosetteAPI连接" class="headerlink" title="Third:设置RosetteAPI连接"></a>Third:设置RosetteAPI连接</h2><p>返回RapidMiner Studio，输入您的Rosette API密钥后就可以开始使用所有的Rosette算子。下一部分将会讲解，如何实体操作中查看提取算子，并使用它来设置Rosette API连接。</p>
-<p>首先，在<strong>算子“Operators”</strong>面板的Rosette Text Toolkit文件夹中找到<strong>文本提取“Extract Entities”</strong>，并将其拖动到<strong>流程“Process”</strong>面板。</p>
-<p><img src="/img/2020_06_04/7.jpg" srcset="/img/loading.gif" alt="7"></p>
-<p>您可以在<strong>流程“Process”</strong>面板右侧的<strong>参数“Parameters”</strong>面板中查看文本提取“Extract Entities”算子的各种参数设置选项。第一个参数是<strong>连接“Connection”</strong>。 单击框右侧的Rosette图标。</p>
-<p><img src="/img/2020_06_04/8.jpg" srcset="/img/loading.gif" alt="8"></p>
-<p> 打开<strong>管理连接“Manage Connections”</strong>窗口。 单击左下角的<strong>添加连接“AddConnection”</strong>按钮，然后从 <strong>连接类型“Connection type”</strong> 下拉列表中选择<strong>”Rosette Connection”</strong>。 为新连接命名，然后单击<strong>创建“Create”</strong>按钮。</p>
-<p><img src="/img/2020_06_04/9.jpg" srcset="/img/loading.gif" alt="9"></p>
-<p>从左侧列表中选择新的“Rosette API”连接，然后在API KEY框中输入Rosette API密钥。 使用窗口底部的<strong>测试“Test”</strong>按钮来验证连接是否正常工作。 如果遇到问题，请确认API密钥是否正确。当确信一切运行顺利时，单击<strong>保存所有更改按钮“Save all changes”</strong>以返回到<strong>参数“Parameters”</strong>面板。</p>
-<p><img src="/img/2020_06_04/10.jpg" srcset="/img/loading.gif" alt="10"></p>
-<p>从连接<strong>Connection</strong>下拉列表中选择您的新连接。</p>
-<p><img src="/img/2020_06_04/11.jpg" srcset="/img/loading.gif" alt="11"></p>
-<p>现在您已设置好Rosette连接了。</p>
+
+
+<h1 id="Rapidminer-中文分词-amp-amp-去除停用词"><a href="#Rapidminer-中文分词-amp-amp-去除停用词" class="headerlink" title="Rapidminer 中文分词&amp;&amp;去除停用词"></a>Rapidminer 中文分词&amp;&amp;去除停用词</h1><h2 id="First-打开Rapidminer新建项目"><a href="#First-打开Rapidminer新建项目" class="headerlink" title="First: 打开Rapidminer新建项目"></a>First: 打开Rapidminer新建项目</h2><p><img src="/img/2020_06_14/first_step.jpg" srcset="/img/loading.gif" alt="Fisrt"></p>
+<p>首先打开你的<code>Rapidminer</code>，选择新建<code>Blank</code>项目。</p>
+<h2 id="Second-导入数据集-amp-amp-导入停用词列表"><a href="#Second-导入数据集-amp-amp-导入停用词列表" class="headerlink" title="Second: 导入数据集&amp;&amp;导入停用词列表"></a>Second: 导入数据集&amp;&amp;导入停用词列表</h2><p><img src="/img/2020_06_14/second_step.jpg" srcset="/img/loading.gif" alt="second"></p>
+<p>点击右上角<code>File</code>，点击<code>Import Data</code>选项。会出现下面画面：</p>
+<p><img src="/img/2020_06_14/third_step.jpg" srcset="/img/loading.gif" alt="third"></p>
+<p>因为我们是要从本地导入数据集，所以我们选择<code>My Computer</code>。会出现下面画面：</p>
+<p><img src="/img/2020_06_14/Fourth_step.jpg" srcset="/img/loading.gif" alt="fourth"></p>
+<p>我们只需要找到我们想导入的数据集，然后点击<code>next</code>。这时候会出现以下画面：</p>
+<p><img src="/img/2020_06_14/Fifth_step.jpg" srcset="/img/loading.gif" alt="fifth"></p>
+<p><strong>注意事项：<code>File Encoding</code>必须要选择<code>UTF-8</code>。<code>Header Row</code>根据实际情况去选择，一般数据集第一行为<code>Header</code>。</strong></p>
+<p>之后我们点击<code>next</code>。这时候会出现以下画面：</p>
+<p><img src="/img/2020_06_14/sixth_step.jpg" srcset="/img/loading.gif" alt="sixth"></p>
+<p><strong>注意事项，右上角<code>Replace errors with missing values</code>是处理数据错误情况的，他是用<code>None</code>值填充的。以下过程必须保证你数据是被清洗过后的。</strong></p>
+<p>之后我们点击<code>next</code>，会出现下面界面：</p>
+<p><img src="/img/2020_06_14/seventh_step.jpg" srcset="/img/loading.gif" alt="seven"></p>
+<p>这里填写的是你的保存数据的地址，你只需要保证你保存后的地址能够找到即可。之后我们点击<code>Finish</code>。便可以完成了数据的导入。</p>
+<p>同理我们导入停用词列表，原理方法一样。</p>
+<h2 id="Third-构建整个流程"><a href="#Third-构建整个流程" class="headerlink" title="Third: 构建整个流程"></a>Third: 构建整个流程</h2><p>回到主界面，然后找到你导入的数据集，将其拖入主界面。</p>
+<p><img src="/img/2020_06_14/eighth_step.jpg" srcset="/img/loading.gif" alt="eight"></p>
+<p>之后在左下角找到<code>Nominal to Text</code>这个<code>Operators</code>。并将其拖入主界面，将第一个控件的<code>out</code>连接这个控件的<code>exa</code>。</p>
+<p><img src="/img/2020_06_14/ninth_step.jpg" srcset="/img/loading.gif" alt="nine"></p>
+<p><img src="/img/2020_06_14/tenth_step.jpg" srcset="/img/loading.gif" alt="ten"></p>
+<p>之后我们在搜索<code>Process Document from Data</code>，将其拖入主界面，然后将<code>Nominal to Text</code>控件的<code>exa</code>连接<code>Process Document from Data</code>控件的exa。</p>
+<p><img src="/img/2020_06_14/eleventh_step.jpg" srcset="/img/loading.gif" alt="eleven"></p>
+<p>这时候我们可以点击<code>Process Document from Data</code>，在右边可以看到这个控件的功能。<code>vector creation</code>我们目前需要选择<code>TF-IDF</code>，剩下都默认就好。</p>
+<p><img src="/img/2020_06_14/12.jpg" srcset="/img/loading.gif" alt="12"></p>
+<p>这时候我们在双击<code>Process Document from Data</code>，进入这个控件里面。会出现以下画面：</p>
+<p><img src="/img/2020_06_14/13.jpg" srcset="/img/loading.gif" alt="13"></p>
+<p>这时候在搜索<code>Document to Data</code>，并将其拖入主屏幕，点击这个控件，<strong>在右边必须填写两个不相等的值。</strong>目前我填写的是<code>text1</code>和<code>text2</code>。</p>
+<p><img src="/img/2020_06_14/14.jpg" srcset="/img/loading.gif" alt="14"></p>
+<p>之后我们在搜索<code>python</code>，将其拖入到主界面里。将<code>Documen to Data</code>的<code>exa</code>连接到<code>python</code>的第一个<code>inp</code>接口。如下图所示。</p>
+<p><img src="/img/2020_06_14/15.jpg" srcset="/img/loading.gif" alt="15"></p>
+<p>之后点击<code>Execute Python</code>，在右侧点击<code>Edit Text</code>，如下图所示。</p>
+<p><img src="/img/2020_06_14/16.jpg" srcset="/img/loading.gif" alt="16"></p>
+<p>之后导入下面的代码（中文分词操作）：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> jieba
+<span class="hljs-keyword">import</span> jieba.analyse
+<span class="hljs-comment">#里面很多无关紧要的代码，但是可以测试用。</span>
+<span class="hljs-comment"># rm_main is a mandatory function,</span>
+<span class="hljs-comment"># the number of arguments has to be the number of input ports (can be none)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rm_main</span><span class="hljs-params">(data)</span>:</span>
+    <span class="hljs-comment"># output can be found in Log View</span>
+    segments = [] <span class="hljs-comment">#功能留用</span>
+    framedata = []
+    <span class="hljs-keyword">for</span> index, row <span class="hljs-keyword">in</span> data.iterrows():
+        content=row[<span class="hljs-number">0</span>]
+        words = jieba.cut(content)
+        splitedStr = <span class="hljs-string">''</span>
+        <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> words:
+        <span class="hljs-comment">#停用词判断，如果当前的关键词不在停用词库中才进行记录</span>
+         segments.append(&#123;<span class="hljs-string">'word'</span>:word, <span class="hljs-string">'count'</span>:<span class="hljs-number">1</span>&#125;)<span class="hljs-comment">#可有可无</span>
+         splitedStr += word + <span class="hljs-string">' '</span>
+        framedata.append(&#123;<span class="hljs-string">'splited word'</span>:splitedStr&#125;)
+    Sgdata = pd.DataFrame(framedata)
+    <span class="hljs-comment">#your code goes here</span>
+    list1 = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(Sgdata)):
+      lis = Sgdata.iloc[i][<span class="hljs-number">0</span>].strip().split(<span class="hljs-string">' '</span>)
+      list1.append(lis)
+    <span class="hljs-comment"># connect 2 output ports to see the results</span>
+    Sgdata = pd.DataFrame(list1)
+    <span class="hljs-keyword">return</span> Sgdata</code></pre>
+
+<p>之后拖入我们所需要的停用词列表数据到主界面，并导入另一个<code>python</code>控件，将第一个<code>python</code>控件的<code>out</code>连接第二个<code>python</code>脚本的第一个<code>inp</code>接口，将停用词的<code>out</code>连接第二个<code>python</code>脚本的第二个<code>inp</code>接口。如下图所示：</p>
+<p><img src="/img/2020_06_14/17.jpg" srcset="/img/loading.gif" alt="17"></p>
+<p>在第二个<code>python</code>控件导入以下代码（去除停用词）：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rm_main</span><span class="hljs-params">(data,data1)</span>:</span>
+    <span class="hljs-comment"># output can be found in Log View</span>
+    listdata = np.array(data1)
+    stopwords = listdata.tolist()
+    segments = []  <span class="hljs-comment"># 功能留用</span>
+    col=k=data.shape[<span class="hljs-number">1</span>]
+    My_content=[]
+    framedata = []
+    j = <span class="hljs-number">0</span>  <span class="hljs-comment"># 记录列数</span>
+    <span class="hljs-keyword">for</span> index, row <span class="hljs-keyword">in</span> data.iterrows():
+        My_content.append([])
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>,k):
+            content=row[i]
+            My_content[j].append(content)
+        splitedStr = <span class="hljs-string">''</span>
+        <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>,col):
+            stop = []
+            <span class="hljs-keyword">if</span> My_content[j][l]!=<span class="hljs-literal">None</span>:
+                stop.append(My_content[j][l])
+                <span class="hljs-keyword">if</span> stop <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> stopwords:
+                    <span class="hljs-comment"># 记录全局分词</span>
+                    segments.append(&#123;<span class="hljs-string">'word'</span>: My_content[j][l], <span class="hljs-string">'count'</span>: <span class="hljs-number">1</span>&#125;)
+                    splitedStr += My_content[j][l] + <span class="hljs-string">' '</span>
+        j = j + <span class="hljs-number">1</span>
+        framedata.append(&#123;<span class="hljs-string">'splited word'</span>: splitedStr&#125;)
+    Sgdata = pd.DataFrame(framedata)
+    <span class="hljs-comment"># your code goes here</span>
+    list1 = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(Sgdata)):
+        lis = Sgdata.iloc[i][<span class="hljs-number">0</span>].strip().split(<span class="hljs-string">' '</span>)
+        list1.append(lis)
+    <span class="hljs-comment"># connect 2 output ports to see the results</span>
+    Sgdata = pd.DataFrame(list1)
+    <span class="hljs-keyword">return</span> Sgdata</code></pre>
+
+<p>之后我们在搜索<code>Nominal to Text</code>这个<code>Operators</code>。并将其拖入主界面，将第二个<code>python</code>控件的<code>out</code>连接这个控件的<code>exa</code>。如下图所示：</p>
+<p><img src="/img/2020_06_14/18.jpg" srcset="/img/loading.gif" alt="18"></p>
+<p>之后我们在搜索<code>Data to Document</code>这个<code>Operators</code>。并将其拖入主界面，将<code>Nominal to Text</code>控件右侧的<code>exa</code>连接这个控件的<code>exa</code>，将<code>Data to Document</code>右侧的<code>doc</code>接口连接右上角的<code>doc</code>接口。如下图所示：</p>
+<p><img src="/img/2020_06_14/19.jpg" srcset="/img/loading.gif" alt="19"></p>
+<p>这时候我们里面的全部流程就做完了。</p>
+<p>下面我们回到主界面。</p>
+<p><img src="/img/2020_06_14/20.jpg" srcset="/img/loading.gif" alt="20"></p>
+<p>之后我们在搜索<code>K-means</code>这个<code>Operators</code>。并将其拖入主界面，并按照如图所示连接所有的线。如下图所示：</p>
+<p><img src="/img/2020_06_14/21.jpg" srcset="/img/loading.gif" alt="21"></p>
+<p>我们可以点击<code>Clustering</code>这个控件，然后在右侧设置我们想设置的数值。</p>
+<p><img src="/img/2020_06_14/22.jpg" srcset="/img/loading.gif" alt="22"></p>
+<h2 id="Fourth-运行整个流程"><a href="#Fourth-运行整个流程" class="headerlink" title="Fourth: 运行整个流程"></a>Fourth: 运行整个流程</h2><p>点击在左上角的蓝色小箭头即可运行您的项目，稍等片刻，即可出现所有的结果。</p>
+<p><img src="/img/2020_06_14/23.jpg" srcset="/img/loading.gif" alt="23"></p>
+<p>那么我们大功告成！</p>
 </div>
+
+
             </article>
             <hr>
             <div>
@@ -224,7 +317,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/rapidminer%E6%8F%92%E4%BB%B6/">rapidminer插件</a>
+                      <a class="hover-with-bg" href="/categories/rapidminer%E6%8F%92%E4%BB%B6%E5%BA%94%E7%94%A8/">rapidminer插件应用</a>
                     
                   </div>
                 
@@ -245,18 +338,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/06/14/rapidminer-chinese/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Rapidminer 中文分词&&去除停用词</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/06/03/DownLoad-repidminer/">
-                        <span class="hidden-mobile">RAPIDMINER 教育版申请及下载</span>
+                      <a href="/2020/06/04/rapidminer-textmining/">
+                        <span class="hidden-mobile">Rosette文本扩展介绍及安装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -435,7 +522,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Rosette文本扩展介绍及安装&nbsp;",
+        "Rapidminer 中文分词&&去除停用词&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
